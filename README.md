@@ -35,17 +35,17 @@ This proactive approach ensures that potential threats or unauthorized activitie
 
 The following hosts are excluded from tracking:
 
--   "browser.pipe.aria.microsoft.com",
--   "business.bing.com",
--   "measure.office.com",
--   "officeapps.live.com",
--   "outlook.office365.com",
--   "outlook.office.com",
--   "nleditor.osi.office.net",
--   "js.monitor.azure.com",
--   "thor.aesir.office.com",
--   "clients.config.office.net",
--   "hubblecontent.osi.office.net"
+-   browser.pipe.aria.microsoft.com,
+-   business.bing.com,
+-   measure.office.com,
+-   officeapps.live.com,
+-   outlook.office365.com,
+-   outlook.office.com,
+-   nleditor.osi.office.net,
+-   js.monitor.azure.com,
+-   thor.aesir.office.com,
+-   clients.config.office.net,
+-   hubblecontent.osi.office.net
 
 Other endpoints, like `login.microsoftonline.com` or `graph.microsoft.com` are tracked, to provide you with come context on what the solution is accessing. If needed, you may exclude these hosts using "Tenant Wide Extensions" list in your App Catalog site. Simply add them, comma delimited, to the `whitelist` property.
 ![whitelist](./assets/extensionproperties.png)
