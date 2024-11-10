@@ -17,13 +17,14 @@ const excludedDependencyTargets: string[] = [
 	"nleditor.osi.office.net",
 	"js.monitor.azure.com",
 	"thor.aesir.office.com",
+	"clients.config.office.net",
+	"hubblecontent.osi.office.net",
 ];
 
 export default class AplicationInsightsApplicationCustomizer extends BaseApplicationCustomizer<AplicationInsightsApplicationCustomizerProps> {
 	private _excludedDependencies: string[] = [];
 
 	private _appInsightsInitializer = (telemetryItem: ITelemetryItem): boolean | void => {
-		//client guid "00000003-0000-0ff1-ce00-000000000000"
 		if (telemetryItem) {
 			if (telemetryItem.baseType === "RemoteDependencyData" && telemetryItem.baseData && telemetryItem.baseData.target) {
 				const isExcluded = this._excludedDependencies.some((target) => telemetryItem.baseData?.target.toLowerCase().indexOf(target.toLowerCase()) !== -1);
@@ -41,7 +42,7 @@ export default class AplicationInsightsApplicationCustomizer extends BaseApplica
 
 		if (this.properties.enabled === true && this.properties.connectionString !== null && this.properties.connectionString !== "") {
 			if (this.properties.whitelist !== "") {
-				const whiteList = this.properties.whitelist.split(";").map((val) => val.trim());
+				const whiteList = this.properties.whitelist?.split(";").map((val) => val.trim());
 				this._excludedDependencies = uniq(merge(excludedDependencyTargets, whiteList));
 			}
 			const appInsights = new ApplicationInsights({

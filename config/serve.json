@@ -4,23 +4,25 @@
   "https": true,
   "serveConfigurations": {
     "default": {
-      "pageUrl": "https://kingasws1e5.sharepoint.com/SitePages/SPFx-security.aspx",
+      "pageUrl": "https://{yourorg}.sharepoint.com/SitePages/Token.aspx",
       "customActions": {
         "d7aed3bb-3773-4e9e-9f46-dbcd9872d3c5": {
           "location": "ClientSideExtension.ApplicationCustomizer",
           "properties": {
-            "connectionString": "InstrumentationKey=0cca816b-824d-418b-99d5-ffd5c3ddd75f;IngestionEndpoint=https://switzerlandnorth-0.in.applicationinsights.azure.com/;LiveEndpoint=https://switzerlandnorth.livediagnostics.monitor.azure.com/;ApplicationId=310c4113-7b89-4535-a580-4c96af1a376c"
+            "connectionString": "{connectionstring-to-applicationinsights}",
+            "enabled": true
           }
         }
       }
     },
     "aplicationInsights": {
-      "pageUrl": "https://kingasws1e5.sharepoint.com/SitePages/SPFx-security.aspx",
+      "pageUrl": "https://{yourorg}.sharepoint.com/SitePages/SPFx-security.aspx",
       "customActions": {
         "d7aed3bb-3773-4e9e-9f46-dbcd9872d3c5": {
           "location": "ClientSideExtension.ApplicationCustomizer",
           "properties": {
-            "connectionString": "InstrumentationKey=0cca816b-824d-418b-99d5-ffd5c3ddd75f;IngestionEndpoint=https://switzerlandnorth-0.in.applicationinsights.azure.com/;LiveEndpoint=https://switzerlandnorth.livediagnostics.monitor.azure.com/;ApplicationId=310c4113-7b89-4535-a580-4c96af1a376c"
+            "connectionString": "{connectionstring-to-applicationinsights}",
+            "enabled": true 
           }
         }
       }
